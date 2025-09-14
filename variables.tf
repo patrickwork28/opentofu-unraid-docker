@@ -129,3 +129,9 @@ variable "containers" {
     error_message = "Mount modes must be either 'ro' (read-only) or 'rw' (read-write)."
   }
 }
+
+variable "unraid_xml_folderpath" {
+  description = "The folder path where Unraid XML files will be generated"
+  type        = string
+  default     = "./unraid-xml"
+}

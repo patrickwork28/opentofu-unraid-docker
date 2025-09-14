@@ -4,7 +4,7 @@
   <Repository>${repository}</Repository>
   <Registry>${registry}</Registry>
   <Network>${network}</Network>
-  <MyIP/>${myip}<MyIP/>
+  <MyIP>${myip}</MyIP>
   <Shell>${shell}</Shell>
   <Privileged>${privileged}</Privileged>
   <Support>${support}</Support>
@@ -15,12 +15,12 @@
   <TemplateURL>${template_url}</TemplateURL>
   <Icon>${icon}</Icon>
   <ExtraParams>${extra_params}</ExtraParams>
-  <PostArgs/>${postargs}<PostArgs/>
-  <CPUset/>${cpuset}<CPUset/>
+  <PostArgs>${postargs}</PostArgs>
+  <CPUset>${cpuset}</CPUset>
   <DateInstalled>${date_installed}</DateInstalled>
   <DonateText>${donate_text}</DonateText>
   <DonateLink>${donate_link}</DonateLink>
-  <Requires/>${requires}<Requires/>
+  <Requires>${requires}</Requires>
 
 %{ for config in configs ~}
   <Config Name="${config.name}" Target="${config.target}" Default="${config.default}" Mode="${config.mode}" Description="${config.description}" Type="${config.type}" Display="${config.display}" Required="${config.required}" Mask="${config.mask}">${config.value}</Config>
