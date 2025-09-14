@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>keycloak</Name>
+  <Repository>quay.io/keycloak/keycloak:25.0</Repository>
+  <Registry>https://quay.io/repository/keycloak/keycloak</Registry>
+  <Network>keycstack</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Open Source Identity and Access Management&#xD;
+Add authentication to applications and secure services with minimum effort. No need to deal with storing users or authenticating users.&#xD;
+Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.</Overview>
+  <Category>Cloud: Security:</Category>
+  <WebUI>https://sso.flamedannam.com</WebUI>
+  <TemplateURL/>
+  <Icon>https://object.flamedannam.com/imgbucket/keycloak.png</Icon>
+  <ExtraParams>--restart=on-failure</ExtraParams>
+  <PostArgs>start</PostArgs>
+  <CPUset/>
+  <DateInstalled>1757867403</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="KC_HOSTNAME" Target="KC_HOSTNAME" Default="" Mode="" Description="Hostname for the Keycloak server." Type="Variable" Display="always" Required="true" Mask="false">sso.flamedannam.com</Config>
+  <Config Name="https web ui" Target="8443" Default="33443" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">33443</Config>
+  <Config Name="KC_PROXY_ADDRESS_FORWARDING" Target="KC_PROXY_ADDRESS_FORWARDING" Default="true" Mode="" Description="This ensures that Keycloak can correctly interpret the actual client's IP address" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="KC_PROXY_HEADERS" Target="KC_PROXY_HEADERS" Default="forwarded" Mode="" Description="This informs Keycloak that it's behind a reverse proxy." Type="Variable" Display="always" Required="true" Mask="false">forwarded</Config>
+  <Config Name="certs path" Target="/mnt/certs/" Default="/mnt/user/appdata/container_keycloak/" Mode="rw" Description="Self-signed certs for https endpoint" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/keycloak/</Config>
+  <Config Name="KC_HTTPS_CERTIFICATE_FILE" Target="KC_HTTPS_CERTIFICATE_FILE" Default="" Mode="" Description="The file path to a server certificate or certificate chain in PEM format." Type="Variable" Display="always" Required="true" Mask="false">/mnt/certs/keycloak.cert.pem</Config>
+  <Config Name="KC_HTTPS_CERTIFICATE_KEY_FILE" Target="KC_HTTPS_CERTIFICATE_KEY_FILE" Default="" Mode="" Description="The file path to a private key in PEM format." Type="Variable" Display="always" Required="true" Mask="false">/mnt/certs/keycloak.key.pem</Config>
+  <Config Name="KC_DB" Target="KC_DB" Default="postgres" Mode="" Description="Database type use" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="KC_DB_URL_HOST" Target="KC_DB_URL_HOST" Default="postgresql" Mode="" Description="database hostname" Type="Variable" Display="always" Required="true" Mask="false">keycloakpostgres16</Config>
+  <Config Name="KC_DB_URL_PORT" Target="KC_DB_URL_PORT" Default="5432" Mode="" Description="database listen port" Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="KC_DB_URL_DATABASE" Target="KC_DB_URL_DATABASE" Default="keycloak" Mode="" Description="database name" Type="Variable" Display="always" Required="true" Mask="false">keycloak_db</Config>
+  <Config Name="KC_DB_USERNAME" Target="KC_DB_USERNAME" Default="keycloak" Mode="" Description="database user" Type="Variable" Display="always" Required="true" Mask="false">keycloak_user</Config>
+  <Config Name="KC_DB_PASSWORD" Target="KC_DB_PASSWORD" Default="" Mode="" Description="database user password" Type="Variable" Display="always" Required="true" Mask="true">SingleSO@2024</Config>
+  <Config Name="KEYCLOAK_ADMIN" Target="" Default="" Mode="" Description="KEYCLOAK_ADMIN&#13;&#10;Keycloak Admin" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="KEYCLOAK_ADMIN_PASSWORD" Target="" Default="" Mode="" Description="KEYCLOAK_ADMIN_PASSWORD&#13;&#10;Keycloak Admin password" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <TailscaleStateDir/>
+</Container>

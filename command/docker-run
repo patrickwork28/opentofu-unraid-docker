@@ -1,0 +1,27 @@
+docker run
+  -d
+  --name='keycloak'
+  --net='keycstack'
+  --pids-limit 2048
+  -e TZ="Asia/Bangkok"
+  -e HOST_OS="Unraid"
+  -e HOST_HOSTNAME="mastervault"
+  -e HOST_CONTAINERNAME="keycloak"
+  -e 'KC_HOSTNAME'='sso.flamedannam.com'
+  -e 'KC_PROXY_ADDRESS_FORWARDING'='true'
+  -e 'KC_PROXY_HEADERS'='forwarded'
+  -e 'KC_HTTPS_CERTIFICATE_FILE'='/mnt/certs/keycloak.cert.pem'
+  -e 'KC_HTTPS_CERTIFICATE_KEY_FILE'='/mnt/certs/keycloak.key.pem'
+  -e 'KC_DB'='postgres'
+  -e 'KC_DB_URL_HOST'='keycloakpostgres16'
+  -e 'KC_DB_URL_PORT'='5432'
+  -e 'KC_DB_URL_DATABASE'='keycloak_db'
+  -e 'KC_DB_USERNAME'='keycloak_user'
+  -e 'KC_DB_PASSWORD'='SingleSO@2024'
+  -l net.unraid.docker.managed=dockerman
+  -l net.unraid.docker.webui='https://sso.flamedannam.com'
+  -l net.unraid.docker.icon='https://object.flamedannam.com/imgbucket/keycloak.png'
+  -p '33443:8443/tcp'
+  -v '/mnt/user/appdata/keycloak/':'/mnt/certs/':'rw'
+  --restart=on-failure 'quay.io/keycloak/keycloak:25.0' start
+f028a964f2e0a07c89c2793e2ba46472180510720726dd41f8c6d530c07f9342

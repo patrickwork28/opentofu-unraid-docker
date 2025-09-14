@@ -1,0 +1,19 @@
+var_input,unraid_ui_input,type,rule,exmaple
+name,Name:,string,free,bookstack
+overview,Overview:,string,free,some text of string
+requires,Additional Requirements:,string,free,some text of string
+image,Repository:,string,free,docker.io/nginx:latest
+category,Categories:,string,must in AI:; Backup:; Cloud:; Crypto Currency:; Downloaders:; Drivers:; Game Servers:; Home Automation:; Productivity:; Security:; Tools:; Other:; MediaApp:Video; MediaApp:Music; MediaApp:Books; MediaApp:Photos; MediaApp:Other; MediaServer:Video; MediaServer:Music; MediaServer:Books; MediaServer:Photos; MediaServer:Other; Network:Web; Network:DNS; Network:FTP; Network:Proxy; Network:Voip; Network:Management; Network:Messenger; Network:VPN; Network:Privacy; Network:Other; Status:Stable; Status:Beta cloud be multiple selection,AI: Security:
+support,Support Thread:,string,free,Telegrams: xxx
+project,Project Page:,string,free,project x
+registry,Registry URL:,string,free,https://github.com/unraid/repo
+icon,Icon URL:,string,free,https://gitlab.com
+webui,WebUI:,string,free,https://192.168.1.1
+extra_params,Extra Parameters:,string,free,--hostname "bookstack"
+postargs,Post Arguments:,string,free,start
+cpuset,CPU Pinning:,list,list of number coma seperated
+network,Network Type:,string,name of container network,keycstack
+myip,Fixed IP address (optional):,string,free,172.72.3.4
+,Use Tailscale:,boolean,default is off <TailscaleStateDir/> very complex
+shell,Console shell command:,string,sh or bash,sh
+privileged,Privileged:,boolean,default is false,false
